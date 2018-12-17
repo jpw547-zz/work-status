@@ -5,7 +5,7 @@ import (
 
 	"github.com/byuoitav/common"
 	"github.com/byuoitav/common/log"
-	"github.com/jpw547/work-status-web/handlers"
+	"github.com/jpw547/work-status/handlers"
 )
 
 func main() {
@@ -15,6 +15,7 @@ func main() {
 	// person status endpoints
 	router.PUT("/status/persons/:name/state/:status", handlers.SetStatus)
 	router.GET("/status/persons/:name", handlers.GetStatus)
+	router.GET("/status/all", handlers.GetAllStatus)
 
 	// log level endpoints
 	router.PUT("/log-level/:level", log.SetLogLevel)

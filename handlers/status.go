@@ -10,6 +10,10 @@ import (
 
 var statusMap map[string]string
 
+func init() {
+	statusMap = make(map[string]string)
+}
+
 // SetStatus sets a person's status on the server
 func SetStatus(context echo.Context) error {
 	name := context.Param("name")
@@ -31,4 +35,11 @@ func GetStatus(context echo.Context) error {
 	log.L.Debugf("Getting status of %s...", name)
 
 	return context.JSON(http.StatusOK, statusMap[name])
+}
+
+// GetAllStatus returns the whole map of person states
+func GetAllStatus(context echo.Context) error {
+	log.L.Debugf("Getting status of everyone")
+
+	return context.JSON(http.StatusOK, statusMap)
 }

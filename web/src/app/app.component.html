@@ -1,0 +1,9 @@
+<mat-toolbar>
+    <mat-toolbar-row class="header">
+        <h1>Who's Here Now</h1>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div *ngFor="let person of statusMap | keyvalue">
+    {{person.key}} --> {{person.value}}
+</div>
