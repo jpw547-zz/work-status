@@ -1,0 +1,15 @@
+@import '~@angular/material/_theming.scss';
+@include mat-core();
+$status-primary: mat-palette($mat-indigo, 800, 700, 900);
+$status-accent: mat-palette($mat-blue, 600, 500, 700);
+$status-warn: mat-palette($mat-red, 700, 500, 800);
+$status-theme: mat-light-theme($status-primary, $status-accent, $status-warn);
+@include angular-material-theme($status-theme);
+$primary: mat-color($status-primary);
+$accent: mat-color($status-accent);
+$warn: mat-color($status-warn);
+@mixin status-tool-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+}

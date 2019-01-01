@@ -1,0 +1,15 @@
+{
+    "/status/all": {
+        "target": "http://localhost:12300",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    },
+    "/provisioning/ws": {
+        "target": "http://localhost:12300",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "ws": true
+    }
+}

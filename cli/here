@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-# send status request
-curl -X PUT http://$WORK_STATUS_ADDRESS/status/persons/$WORK_STATUS_NAME/state/here

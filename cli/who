@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+if [ -z $WORK_STATUS_ADDRESS ]
+    then
+        echo "WORK_STATUS_ADDRESS is missing. Come back when you have that address set." 
+        exit
+fi
+
+NAME=$WORK_STATUS_NAME
+
+if [ -z "$1" ]
+    then 
+        echo "Missing state argument. Please enter a status with the command."
+        exit
+fi
+
+if [[ $1 = "--help" || $1 = "--usage" ]]
+    then 
+        echo "Usage: who <state> [name]"
+        exit
+fi
+
+STATE=$1
+
+if [ ! -z "$2" ]
+    then
+        NAME=$2
+fi
+
+# send status request
+if [[ $NAME = "all" ]]
+    then
+        curl -X PUT http://$WORK_STATUS_ADDRESS/status/$NAME/state/$STATE
+    else
+        if [ ! -z "$3" ]
+            then
+                curl -X PUT http://$WORK_STATUS_ADDRESS/status/persons/$NAME/state/$STATE/timer/$3
+            else
+                curl -X PUT http://$WORK_STATUS_ADDRESS/status/persons/$NAME/state/$STATE
+        fi
+fi
+echo

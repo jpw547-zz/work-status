@@ -1,0 +1,28 @@
+.status-card {
+    min-width: 250px;
+    min-height: 130px;
+    &.here {
+        background-color: #6cd642
+    }
+    &.out {
+        background-color: #db3b36
+    }
+    &.brb {
+        background-color: #ece13b
+    }
+    &.away {
+        background-color: #f77f30
+    }
+    &.school {
+        background-color: #4c72f1;
+        // color: #ffffff;
+    }
+    &.starcraft {
+        background-color: #5f3dbb;
+        color: white;
+    }
+    &.dnd {
+        background-color: #000000;
+        color: white;
+    }
+}

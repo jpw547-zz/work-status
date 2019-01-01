@@ -1,9 +1,33 @@
 <mat-toolbar>
     <mat-toolbar-row class="header">
-        <h1>Who's Here Now</h1>
+        <h2 class="mat-h2">Who's Here Now</h2>
     </mat-toolbar-row>
 </mat-toolbar>
 
-<div *ngFor="let person of statusMap | keyvalue">
-    {{person.key}} --> {{person.value}}
+<div class="container">
+    <div class="row">
+        <div class="column A">
+            <status [name]="'matt'" [position]="FULL_TIME" [state]="statusMap['matt']"></status>
+
+            <status [name]="'joe'" [position]="FULL_TIME" [state]="statusMap['joe']"></status>
+
+            <status [name]="'danny'" [position]="FULL_TIME" [state]="statusMap['danny']"></status>
+        </div>
+
+        <span class="column B">Doorway</span>
+
+        <div class="column B">
+            <status [name]="'clinton'" [position]="FULL_TIME" [state]="statusMap['clinton']"></status>
+        </div>
+
+        <div class="column C">
+            <status [name]="'parker'" [position]="STUDENT" [state]="statusMap['parker']"></status>
+
+            <status [name]="'caleb'" [position]="STUDENT" [state]="statusMap['caleb']"></status>
+
+            <status [name]="'john'" [position]="STUDENT" [state]="statusMap['john']"></status>
+
+            <status [name]="'smitty'" [position]="STUDENT" [state]="statusMap['smitty']"></status>
+        </div>
+    </div>
 </div>

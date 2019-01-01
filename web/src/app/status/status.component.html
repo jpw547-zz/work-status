@@ -1,0 +1,12 @@
+<mat-card [ngClass]="[statusClass()]">
+    <mat-card-header>
+        <mat-card-title>{{nameAsTitle()}}</mat-card-title>
+        <mat-card-subtitle>{{position}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <li>{{showStatus()}}</li>
+        <div *ngIf="showCountdown().length > 0">
+            {{showCountdown()}}
+        </div>
+    </mat-card-content>
+</mat-card>

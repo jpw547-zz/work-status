@@ -2,3 +2,40 @@
     background-color: #0e1a81;
     color: #ffffff;
 }
+
+.container {
+    width: 100%;
+    margin: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+}
+
+.row {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-content: space-between;
+    align-items: center;
+    &.buttons {
+        justify-content: flex-end;
+    }
+}
+
+.column {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 600px;
+    &.A {
+        justify-content: space-between;
+    }
+    &.B {
+        justify-content: flex-end;
+    }
+    &.C {
+        justify-content: space-between;
+    }
+}
